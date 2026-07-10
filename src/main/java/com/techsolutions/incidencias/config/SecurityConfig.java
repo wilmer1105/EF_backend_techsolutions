@@ -22,7 +22,7 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             // 3. Configurar permisos de rutas
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/auth/login", "/api/incidencias/**","/api/").permitAll() // Permitimos login y las rutas que creamos
+                .requestMatchers("/api/auth/login", "/api/incidencias/**", "/api/reportes/**", "/api/usuarios/**", "/api/").permitAll() // Permitimos login y las rutas que creamos
                 .requestMatchers("/todas", "/tecnicos", "/asignar").permitAll()
                 .anyRequest().authenticated()
             );
